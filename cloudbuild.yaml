@@ -8,13 +8,14 @@ steps:
     args: ['push', 'gcr.io/$PROJECT_ID/dhammavillage']
   
   # Deploy to Cloud Run
-  - name: 'gcr.io/cloud-builders/gke-deploy'
+  - name: 'gcr.io/cloud-builders/run'
     args:
-      - run
-      - --filename=.
-      - --image=gcr.io/$PROJECT_ID/dhammavillage:$SHORT_SHA
-      - --location=us-central1
-      - --output=output
+      - 'deploy'
+      - 'dhammavillage'
+      - '--image=gcr.io/$PROJECT_ID/dhammavillage:$SHORT_SHA'
+      - '--region=us-central1'
+      - '--platform=managed'
+      - '--allow-unauthenticated'
 
 images:
   - 'gcr.io/$PROJECT_ID/dhammavillage:latest'
@@ -23,3 +24,4 @@ images:
 options:
   machineType: 'N1_HIGHCPU_8'
   logging: CLOUD_LOGGING_ONLY
+
