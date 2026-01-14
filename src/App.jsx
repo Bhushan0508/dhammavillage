@@ -234,7 +234,7 @@ export default function App() {
                    <div style={{ background: 'rgba(255,255,255,0.1)', padding: '0.75rem', borderRadius: '50%' }}>
                     <Mail size={20} color="var(--accent)" />
                   </div>
-                  <span>institutional@dhamma-village.org</span>
+                  <span>admin@dhammavillage.org</span>
                 </div>
               </div>
             </div>
