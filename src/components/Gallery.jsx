@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Maximize2 } from 'lucide-react';
 import { InteriorHallIllustration, VillageMasterPlan } from './GraphicElements';
+import detailedPlan from '../assets/detailed-master-plan.png';
 
 const IMAGES = [
+    { src: detailedPlan, title: 'Master Development Plan', desc: 'The comprehensive, detailed master plan for the Dhamma Village project.' },
     { src: '/assets/conceptual_layout_1768318218231.png', title: 'Modular Village Layout', desc: 'Optimized circular clusters for social cohesion and resource sharing.' },
+
     { src: '/assets/resource_optimization_1768318244753.png', title: 'Closed-Loop Systems', desc: 'Integrated water harvesting and biomass conversion infographics.' },
     { type: 'component', component: <InteriorHallIllustration />, title: 'Dhamma Hall Interior', desc: 'A minimalist, light-filled space designed for collective silence and resonance.' },
     { type: 'component', component: <VillageMasterPlan />, title: 'Detailed Master Plan', desc: 'Architectural overview of the Village system and its functional zones.' },

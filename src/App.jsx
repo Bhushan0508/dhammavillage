@@ -9,6 +9,8 @@ import Guidelines from './components/Guidelines';
 import Forms from './components/Forms';
 import { HappyCommunityBackground } from './components/GraphicElements';
 import VillageExplorer from './components/VillageExplorer';
+import logo from './assets/logo.png';
+
 
 
 
@@ -43,8 +45,12 @@ export default function App() {
         backdropFilter: 'blur(10px)', borderBottom: '1px solid var(--border)', zIndex: 1000, padding: '1rem 0'
       }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <a href="#" className="logo">Dhamma Village</a>
+          <a href="#" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <img src={logo} alt="Dhamma Village Logo" style={{ height: '40px', width: 'auto' }} />
+            <span style={{ fontWeight: 700, fontSize: '1.2rem', color: 'var(--primary)' }}>Dhamma Village</span>
+          </a>
           <nav>
+
             <ul style={{ display: 'flex', gap: '1.5rem', listStyle: 'none', margin: 0, padding: 0 }}>
               {navLinks.map(link => (
                 <li key={link.id}><a href={`#${link.id}`} style={{ textDecoration: 'none', color: 'var(--text-muted)', fontWeight: 500, fontSize: '0.85rem', transition: 'color 0.2s' }}>{link.name}</a></li>
@@ -250,8 +256,12 @@ export default function App() {
 
       <footer style={{ padding: '4rem 0', borderTop: '1px solid var(--border)', background: '#f8fafc' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <div className="logo" style={{ marginBottom: '1.5rem', fontSize: '1.5rem' }}>Dhamma Village</div>
+          <div className="logo" style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.75rem' }}>
+            <img src={logo} alt="Dhamma Village Logo" style={{ height: '50px', width: 'auto' }} />
+            <span style={{ fontWeight: 700, fontSize: '1.5rem', color: 'var(--primary)' }}>Dhamma Village</span>
+          </div>
           <p style={{ fontSize: '0.95rem', maxWidth: '600px', margin: '0 auto 2rem', color: 'var(--text-muted)' }}>
+
             A public charitable trust initiative focused on preventive mental well-being and rural community development.
             <br />
             <strong>Institutional. Factual. Secular.</strong>

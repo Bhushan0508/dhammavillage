@@ -2,15 +2,30 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
     MainPagodaLayout, SevakNiwasLayout, ResidentApplicationLayout, 
+
     MonkResidencesLayout, FacilitiesLayout, GardensLayout, 
     PondsBoundariesLayout, DiningHallLayout, WorkshopLayout, 
     SchoolLayout, FarmLayout, VegetableGardenLayout 
 } from './GraphicElements';
 import { Map, Info, Camera, Compass } from 'lucide-react';
+import detailedPlan from '../assets/detailed-master-plan.png';
 
 const VILLAGE_AREAS = [
     {
+        id: 'overview',
+        name: 'Village Master Plan',
+        layout: <img src={detailedPlan} alt="Detailed Village Master Plan" style={{ width: '100%', borderRadius: '8px' }} />,
+        description: 'A comprehensive view of the Dhamma Village development, showcasing the modular circular clusters and integrated natural systems.',
+        narratives: [
+            'Architectural bird\'s-eye view showing the core Dhamma Hall and concentric residential rings.',
+            'Clear demarcation of agricultural zones, utility hubs, and natural pond systems.',
+            'Designed for sustainable rural living with zero external debt and 100% water recycling.',
+            'Modular layout allowing for scalable growth from 100 to 700 residents.'
+        ]
+    },
+    {
         id: 'pagoda',
+
         name: 'Main Pagoda (Dhamma Hall)',
         layout: <MainPagodaLayout />,
         description: 'The spiritual and functional core of the village, designed for collective silence and resonance.',
