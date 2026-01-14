@@ -157,3 +157,133 @@ export const HappyCommunityBackground = ({ className = "" }) => (
         </g>
     </svg>
 );
+
+// --- Detailed Village Area Layouts ---
+
+export const MainPagodaLayout = ({ className = "" }) => (
+    <svg viewBox="0 0 400 400" className={className} xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="200" r="180" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="2" />
+        <circle cx="200" cy="200" r="140" fill="none" stroke="#2d4a3e" strokeWidth="1" strokeDasharray="5 5" />
+        <circle cx="200" cy="200" r="100" fill="#2d4a3e" opacity="0.1" />
+        <circle cx="200" cy="200" r="60" fill="#2d4a3e" />
+        <circle cx="200" cy="200" r="40" fill="none" stroke="white" strokeWidth="2" opacity="0.5" />
+        <path d="M 200 20 L 200 380 M 20 200 L 380 200" stroke="white" strokeWidth="1" opacity="0.2" />
+    </svg>
+);
+
+export const SevakNiwasLayout = ({ className = "" }) => (
+    <svg viewBox="0 0 400 400" className={className} xmlns="http://www.w3.org/2000/svg">
+        <rect x="50" y="50" width="300" height="300" rx="10" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="2" />
+        <rect x="70" y="70" width="120" height="120" rx="5" fill="#2d4a3e" opacity="0.1" />
+        <rect x="210" y="70" width="120" height="120" rx="5" fill="#2d4a3e" opacity="0.1" />
+        <rect x="70" y="210" width="120" height="120" rx="5" fill="#2d4a3e" opacity="0.1" />
+        <rect x="210" y="210" width="120" height="120" rx="5" fill="#2d4a3e" opacity="0.1" />
+        <circle cx="200" cy="200" r="30" fill="white" stroke="#2d4a3e" strokeWidth="1" />
+    </svg>
+);
+
+export const ResidentApplicationLayout = ({ className = "" }) => (
+    <svg viewBox="0 0 400 400" className={className} xmlns="http://www.w3.org/2000/svg">
+        <path d="M 50 100 L 350 100 L 350 350 L 50 350 Z" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="2" />
+        <rect x="80" y="60" width="240" height="60" rx="8" fill="#2d4a3e" />
+        <line x1="100" y1="150" x2="300" y2="150" stroke="#cbd5e0" strokeWidth="4" />
+        <line x1="100" y1="200" x2="300" y2="200" stroke="#cbd5e0" strokeWidth="4" />
+        <line x1="100" y1="250" x2="250" y2="250" stroke="#cbd5e0" strokeWidth="4" />
+        <rect x="150" y="290" width="100" height="30" rx="4" fill="#2d4a3e" opacity="0.2" />
+    </svg>
+);
+
+export const MonkResidencesLayout = ({ className = "" }) => (
+    <svg viewBox="0 0 400 400" className={className} xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="200" r="160" fill="none" stroke="#2d4a3e" strokeWidth="1" strokeDasharray="8 4" opacity="0.3" />
+        {[0, 60, 120, 180, 240, 300].map((a, i) => {
+            const r = (a * Math.PI) / 180;
+            return <circle key={i} cx={200 + 130 * Math.cos(r)} cy={200 + 130 * Math.sin(r)} r="35" fill="#f8fafc" stroke="#2d4a3e" strokeWidth="2" />;
+        })}
+        <circle cx="200" cy="200" r="50" fill="#2d4a3e" opacity="0.05" />
+    </svg>
+);
+
+export const FacilitiesLayout = ({ className = "" }) => (
+    <svg viewBox="0 0 400 400" className={className} xmlns="http://www.w3.org/2000/svg">
+        <rect x="50" y="50" width="300" height="300" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="2" />
+        <rect x="80" y="80" width="100" height="100" fill="#2d4a3e" opacity="0.1" />
+        <rect x="220" y="80" width="100" height="100" fill="#2d4a3e" opacity="0.1" />
+        <path d="M 80 250 L 320 250" stroke="#2d4a3e" strokeWidth="8" opacity="0.2" />
+        <circle cx="130" cy="130" r="20" fill="#2d4a3e" opacity="0.3" />
+        <circle cx="270" cy="130" r="20" fill="#2d4a3e" opacity="0.3" />
+    </svg>
+);
+
+export const GardensLayout = ({ className = "" }) => (
+    <svg viewBox="0 0 400 400" className={className} xmlns="http://www.w3.org/2000/svg">
+        <path d="M 50 350 Q 100 50 350 100 Q 380 300 200 380 Z" fill="#f0fff4" stroke="#68d391" strokeWidth="2" />
+        <circle cx="150" cy="150" r="40" fill="#68d391" opacity="0.2" />
+        <circle cx="280" cy="220" r="50" fill="#68d391" opacity="0.1" />
+        <path d="M 80 320 Q 200 200 320 80" fill="none" stroke="#2d4a3e" strokeWidth="2" strokeDasharray="5 5" opacity="0.2" />
+    </svg>
+);
+
+export const PondsBoundariesLayout = ({ className = "" }) => (
+    <svg viewBox="0 0 400 400" className={className} xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="20" width="360" height="360" fill="none" stroke="#2d4a3e" strokeWidth="4" strokeDasharray="20 10" opacity="0.2" />
+        <path d="M 100 150 Q 150 100 250 150 Q 300 250 150 300 Q 50 250 100 150" fill="#ebf8ff" stroke="#4299e1" strokeWidth="2" />
+        <path d="M 280 280 Q 320 250 350 320 Q 300 380 280 280" fill="#ebf8ff" stroke="#4299e1" strokeWidth="2" />
+    </svg>
+);
+
+export const DiningHallLayout = ({ className = "" }) => (
+    <svg viewBox="0 0 400 400" className={className} xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="80" width="320" height="240" rx="20" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="2" />
+        <rect x="70" y="110" width="260" height="60" fill="#2d4a3e" opacity="0.1" />
+        <g opacity="0.2">
+            {[100, 160, 220, 280].map((y, i) => (
+                <rect key={i} x="60" y={y + 10} width="280" height="10" rx="2" fill="#2d4a3e" />
+            ))}
+        </g>
+    </svg>
+);
+
+export const WorkshopLayout = ({ className = "" }) => (
+    <svg viewBox="0 0 400 400" className={className} xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="40" width="320" height="320" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="2" />
+        <rect x="60" y="60" width="100" height="100" fill="#2d4a3e" opacity="0.1" />
+        <rect x="240" y="60" width="100" height="100" fill="#2d4a3e" opacity="0.1" />
+        <rect x="60" y="240" width="280" height="100" fill="#2d4a3e" opacity="0.05" />
+        <path d="M 180 180 L 220 220 M 220 180 L 180 220" stroke="#2d4a3e" strokeWidth="4" opacity="0.3" />
+    </svg>
+);
+
+export const SchoolLayout = ({ className = "" }) => (
+    <svg viewBox="0 0 400 400" className={className} xmlns="http://www.w3.org/2000/svg">
+        <rect x="50" y="50" width="300" height="300" rx="40" fill="#fcfcfc" stroke="#e2e8f0" strokeWidth="2" />
+        <circle cx="200" cy="200" r="80" fill="none" stroke="#2d4a3e" strokeWidth="1" strokeDasharray="4 4" />
+        <rect x="160" y="160" width="80" height="80" rx="10" fill="#2d4a3e" opacity="0.1" />
+        {[100, 300].map((x, i) => (
+            <circle key={i} cx={x} cy="200" r="30" fill="#2d4a3e" opacity="0.05" />
+        ))}
+    </svg>
+);
+
+export const FarmLayout = ({ className = "" }) => (
+    <svg viewBox="0 0 400 400" className={className} xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="20" width="360" height="360" fill="#f6fdf9" stroke="#c6f6d5" strokeWidth="1" />
+        {[40, 80, 120, 160, 200, 240, 280, 320].map((x, i) => (
+            <line key={i} x1={x} y1="20" x2={x} y2="380" stroke="#68d391" strokeWidth="1" opacity="0.3" />
+        ))}
+        <rect x="150" y="150" width="100" height="100" fill="#2d4a3e" opacity="0.05" />
+    </svg>
+);
+
+export const VegetableGardenLayout = ({ className = "" }) => (
+    <svg viewBox="0 0 400 400" className={className} xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="40" width="320" height="320" rx="4" fill="#f0fff4" stroke="#9ae6b4" strokeWidth="2" />
+        {[60, 100, 140, 180, 220, 260, 300, 340].map((y, i) => (
+            <g key={i} opacity="0.4">
+                {[70, 110, 150, 190, 230, 270, 310, 350].map((x, j) => (
+                    <circle key={j} cx={x-15} cy={y-15} r="4" fill="#2d4a3e" />
+                ))}
+            </g>
+        ))}
+    </svg>
+);

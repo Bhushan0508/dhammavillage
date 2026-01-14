@@ -8,6 +8,8 @@ import Schedule from './components/Schedule';
 import Guidelines from './components/Guidelines';
 import Forms from './components/Forms';
 import { HappyCommunityBackground } from './components/GraphicElements';
+import VillageExplorer from './components/VillageExplorer';
+
 
 
 const Section = ({ id, title, children, bgColor = 'transparent' }) => (
@@ -22,7 +24,9 @@ const Section = ({ id, title, children, bgColor = 'transparent' }) => (
 export default function App() {
   const navLinks = [
     { name: 'Model', id: 'model' },
+    { name: 'Tour', id: 'tour' },
     { name: 'Routine', id: 'routine' },
+
     { name: 'Impact', id: 'impact' },
     { name: 'Gallery', id: 'gallery' },
     { name: 'Guidelines', id: 'guidelines' },
@@ -101,6 +105,12 @@ export default function App() {
         <Section id="model" title="Project Presentation" bgColor="#f8fafc">
            <Presentation />
         </Section>
+
+        {/* Village Explorer Section */}
+        <Section id="tour" title="Village Interactive Tour">
+           <VillageExplorer />
+        </Section>
+
 
         {/* Schedule Section */}
         <Section id="routine" title="Village Daily Rhythm">
