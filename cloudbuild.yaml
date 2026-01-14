@@ -1,0 +1,25 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/dhammavillage:latest', '-t', 'gcr.io/$PROJECT_ID/dhammavillage:$SHORT_SHA', '.']
+  
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/dhammavillage']
+  
+  # Deploy to Cloud Run
+  - name: 'gcr.io/cloud-builders/gke-deploy'
+    args:
+      - run
+      - --filename=.
+      - --image=gcr.io/$PROJECT_ID/dhammavillage:$SHORT_SHA
+      - --location=us-central1
+      - --output=output
+
+images:
+  - 'gcr.io/$PROJECT_ID/dhammavillage:latest'
+  - 'gcr.io/$PROJECT_ID/dhammavillage:$SHORT_SHA'
+
+options:
+  machineType: 'N1_HIGHCPU_8'
+  logging: CLOUD_LOGGING_ONLY
