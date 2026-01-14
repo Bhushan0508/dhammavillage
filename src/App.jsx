@@ -7,6 +7,8 @@ import Presentation from './components/Presentation';
 import Schedule from './components/Schedule';
 import Guidelines from './components/Guidelines';
 import Forms from './components/Forms';
+import { HappyCommunityBackground } from './components/GraphicElements';
+
 
 const Section = ({ id, title, children, bgColor = 'transparent' }) => (
   <section id={id} style={{ background: bgColor, padding: '5rem 0' }}>
@@ -50,8 +52,11 @@ export default function App() {
 
       <main>
         {/* Hero Section */}
-        <section className="hero">
-          <div className="container">
+        <section className="hero" style={{ position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', zIndex: 0, opacity: 0.6 }}>
+            <HappyCommunityBackground />
+          </div>
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
             >
@@ -69,6 +74,7 @@ export default function App() {
             </div>
           </div>
         </section>
+
 
         {/* About / Intro */}
         <Section id="about">

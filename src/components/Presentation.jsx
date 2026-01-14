@@ -2,9 +2,18 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Target, AlertCircle, Compass, ShieldCheck, BarChart3, TrendingUp, Users, Wallet } from 'lucide-react';
 
+import { VillageMasterPlan } from './GraphicElements';
+
 const SLIDES = [
     {
+        title: "Modular Village Master Plan",
+        subtitle: "A circular, self-sufficient community layout optimized for social cohesion and resource efficiency.",
+        icon: <VillageMasterPlan className="presentation-svg" style={{ width: '300px', height: '300px' }} />,
+        points: ["Centralized Dhamma Hall for shared discipline", "Residential clusters arranged in social rings", "Integrated agricultural and utility zones", "Designed for scalability (100–700 residents)"]
+    },
+    {
         title: "Dhamma Village Initiative",
+
         subtitle: "A Preventive Mental Health & Ethical Living Model for Rural India",
         icon: <Compass size={64} />,
         points: ["Implemented by: Dhamma Village Public Charitable Trust", "CSR Alignment: Schedule VII, Companies Act 2013", "Focus: Long-term community stability"]
