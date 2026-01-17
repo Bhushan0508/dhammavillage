@@ -1,0 +1,71 @@
+metadata:
+  '#type': wizard_page
+  '#title': 'Basic Descriptive Metadata'
+  '#access_create_roles':
+    - administrator
+    - metadata_pro
+  '#access_update_roles':
+    - authenticated
+  '#access_view_roles':
+    - authenticated
+  '#next_button_label': 'Move on to next step'
+  label:
+    '#type': textfield
+    '#title': Title
+    '#description': 'Please provide a brief title for this collection.'
+    '#title_display': before
+    '#description_display': before
+    '#minlength': 3
+    '#maxlength': 256
+    '#placeholder': 'Title of this Object'
+    '#required': true
+    '#required_error': 'Please provide a brief title for this collection.'
+    '#states_clear': false
+    '#label_attributes':
+      class:
+        - custom-form-input-heading
+    '#format_items': comma
+    '#access_create_roles':
+      - administrator
+      - metadata_pro
+    '#access_update_roles':
+      - administrator
+      - metadata_pro
+  type:
+    '#type': select
+    '#title': 'Collection Media Type'
+    '#help': 'For Digital Object Collections, recommended selections from the&nbsp;<a href="/admin/structure/webform/config/options/manage">predefined options</a>&nbsp;found in the Schema.org Creative Works list are: Collection, Creative Work Series (Compound Object/Collection), Newspaper, or Periodical.'
+    '#options': schema_org_cw_collections
+    '#required': true
+    '#states_clear': false
+    '#label_attributes':
+      class:
+        - custom-form-input-heading
+  publisher:
+    '#type': textfield
+    '#title': Publisher
+    '#title_display': before
+    '#description_display': before
+    '#states_clear': false
+    '#format_items': comma
+  ismemberof:
+    '#type': entity_autocomplete
+    '#title': 'Related Collection(s) Membership'
+    '#target_type': node
+    '#selection_handler': 'default:node'
+    '#selection_settings':
+      target_bundles:
+        digital_object: digital_object
+        digital_object_collection: digital_object_collection
+        front_page_content: front_page_content
+  images:
+    '#type': image_file
+    '#title': 'Upload Image Files'
+    '#multiple': 5
+    '#file_extensions': 'jp2 jpg jpeg png tif tiff'
+actions:
+  '#type': webform_actions
+  '#title': 'Submit button(s)'
+  '#submit__label': 'Save Metadata'
+  '#reset__label': 'Clear Form'
+  '#preview_prev_hide': true
