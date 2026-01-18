@@ -13,6 +13,10 @@ import Donate from './pages/Donate';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Forum from './pages/Forum';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Compliance from './pages/Compliance';
+import ProjectDetails from './pages/ProjectDetails';
 
 function App() {
   return (
@@ -32,6 +36,10 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/forum" element={<Forum />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/compliance" element={<Compliance />} />
+            <Route path="/projects/:id" element={<ProjectDetails />} />
           </Routes>
         </main>
         <Footer />

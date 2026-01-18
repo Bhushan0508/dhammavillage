@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Globe, MapPin, Info, Briefcase, FileText, Heart } from 'lucide-react';
 
 const Projects = () => {
@@ -6,6 +7,7 @@ const Projects = () => {
 
   const detailedProjects = [
     { 
+      id: '1',
       region: 'ASIA',
       country: 'India', 
       location: 'Pilot Flagship Project', 
@@ -19,6 +21,7 @@ const Projects = () => {
       ]
     },
     { 
+      id: '2',
       region: 'ASIA',
       country: 'Indonesia', 
       location: 'Bali – Southeast Asia Regional Hub', 
@@ -32,6 +35,7 @@ const Projects = () => {
       ]
     },
     { 
+      id: '3',
       region: 'ASIA',
       country: 'Nepal', 
       location: 'Expansion Node', 
@@ -42,6 +46,7 @@ const Projects = () => {
       details: []
     },
     { 
+      id: '4',
       region: 'AFRICA',
       country: 'Kenya', 
       location: 'Community Pilot', 
@@ -52,6 +57,7 @@ const Projects = () => {
       details: []
     },
     { 
+      id: '5',
       region: 'AMERICA',
       country: 'United States', 
       location: 'Institutional Partnership', 
@@ -97,9 +103,9 @@ const Projects = () => {
               <p style={{ opacity: 0.9 }}>Select a pin to view project details</p>
             </div>
             {/* Mock Pins */}
-            <div style={{ position: 'absolute', top: '40%', left: '60%', width: '15px', height: '15px', background: '#E67E22', borderRadius: '50%', boxShadow: '0 0 10px #E67E22', cursor: 'pointer' }} title="India"></div>
-            <div style={{ position: 'absolute', top: '55%', left: '70%', width: '12px', height: '12px', background: '#E67E22', borderRadius: '50%', cursor: 'pointer' }} title="Indonesia"></div>
-            <div style={{ position: 'absolute', top: '30%', left: '25%', width: '12px', height: '12px', background: '#4682B4', borderRadius: '50%', cursor: 'pointer' }} title="USA"></div>
+            <Link to="/projects/1" style={{ position: 'absolute', top: '40%', left: '60%', width: '15px', height: '15px', background: '#E67E22', borderRadius: '50%', boxShadow: '0 0 10px #E67E22', cursor: 'pointer' }} title="India"></Link>
+            <Link to="/projects/2" style={{ position: 'absolute', top: '55%', left: '70%', width: '12px', height: '12px', background: '#E67E22', borderRadius: '50%', cursor: 'pointer' }} title="Indonesia"></Link>
+            <Link to="/projects/5" style={{ position: 'absolute', top: '30%', left: '25%', width: '12px', height: '12px', background: '#4682B4', borderRadius: '50%', cursor: 'pointer' }} title="USA"></Link>
           </div>
 
           {/* Filters & Grid */}
@@ -150,7 +156,7 @@ const Projects = () => {
                 </div>
 
                 <div style={{ display: 'flex', gap: '1rem' }}>
-                  <button className="btn btn-outline" style={{ fontSize: '0.85rem', padding: '0.5rem 1rem', width: '100%' }}>View Details</button>
+                  <Link to={`/projects/${p.id}`} className="btn btn-outline" style={{ fontSize: '0.85rem', padding: '0.5rem 1rem', width: '100%', textAlign: 'center', display: 'block' }}>View Details</Link>
                 </div>
               </div>
             ))}
