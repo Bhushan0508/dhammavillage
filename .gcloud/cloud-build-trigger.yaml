@@ -1,0 +1,17 @@
+# Cloud Build Trigger Configuration
+# This file documents the trigger setup for building dhammavillage
+# 
+# To create this trigger manually:
+# gcloud builds triggers create github \
+#   --name="dhammavillage-main" \
+#   --repo-name="dhammavillage" \
+#   --repo-owner="Bhushan0508" \
+#   --branch-pattern="^main$" \
+#   --build-config="cloudbuild.yaml"
+
+name: dhammavillage-main
+description: Build and deploy dhammavillage on push to main
+filename: cloudbuild.yaml
+repo_name: dhammavillage
+repo_owner: Bhushan0508
+branch_pattern: ^main$
